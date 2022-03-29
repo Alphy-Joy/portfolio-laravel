@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CarsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +13,4 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[PagesController::class,'index']);
-Route::get('posts/',[PostsController::class,'index']);
+Route::resource('/cars',CarsController::class);
