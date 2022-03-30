@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Rules\Uppercase;
+
 class CarsController extends Controller
 {
     /**
@@ -48,7 +50,7 @@ class CarsController extends Controller
         // $car->save();
 
         $request->validate([
-            'name'=>'required',
+            'name'=>new Uppercase,
             'founded'=>'required|integer|min:0|max:2022',
             'description'=>'required'
         ]);
