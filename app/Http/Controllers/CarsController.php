@@ -47,6 +47,12 @@ class CarsController extends Controller
         // $car->description = $request->input('description');
         // $car->save();
 
+        $request->validate([
+            'name'=>'required',
+            'founded'=>'required|integer|min:0|max:2022',
+            'description'=>'required'
+        ]);
+
         $car = Car::create([
             'name' => $request->input('name'),
             'founded' => $request->input('founded'),

@@ -26,4 +26,9 @@ class Car extends Model
             'model_id' // fk on engines table
         );
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

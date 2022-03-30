@@ -44,6 +44,12 @@
                 <p>No models are found</p>
             @endforelse
         </table>
+
+        @forelse ($car->products as $product)
+            {{ $product->name }}
+        @empty
+            <p>No products found</p>
+        @endforelse
         <hr class="mt-4 mb-8">
     </div>
 
